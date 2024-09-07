@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milestone 3: Dynamic Resume Builder with Form</title>
+    <style>
+      #generated-resume div {
+        transition: opacity 0.3s ease-in-out;
+      }
+      /* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input, form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+form button {
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Resume Display Styling */
+#generated-resume {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+}
+
+#generated-resume h2 {
+  text-align: center;
+  color: #333;
+}
+
+#generated-resume div {
+  padding: 8px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <form id="resume-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+      
+          <label for="education">Education:</label>
+          <input id="education" name="education" required></input>
+      
+          <label for="work-experience">Work Experience:</label>
+          <input id="work-experience" name="work-experience"></input>
+      
+          <label for="skills">Skills (comma-separated):</label>
+          <input type="text" id="skills" name="skills" />
+      
+          <button type="submit">Generate Resume</button>
+        </form>
+      
+        <section id="generated-resume">
+          <h2>Generated Resume</h2>
+          <div id="display-name"></div>
+          <div id="display-email"></div>
+          <div id="display-education"></div>
+          <div id="display-work-experience"></div>
+          <div id="display-skills"></div>
+        </section>
+      </div>      
+    <script src="./index.js"></script>
+  </body>
+</html>
